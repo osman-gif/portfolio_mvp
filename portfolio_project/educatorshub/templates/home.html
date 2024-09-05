@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+
+{% block content%}
+<style>
+    .home-container {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+    }
+</style>
+
+{% if request.user.is_authenticated %}
+    <div class="home-container">
+        
+        {% if request.user.user_type == 'school' %}
+            <div>
+                Browse Applications
+                <hr>
+                <div>
+                    <a href="{% url 'home' %}">
+                        All</a> 
+                </div>
+                {% for subject in subjects %}
+                    <div>
+                        <a href="{% url 'home' %}?q={{subject.id}}"> {{subject.position_title}} </a>         
+                    </div>
+                {% endfor %}
+            </div>
+            <div>
+                <p>Number of Applications {{applications.count}}</p>
+                {% for application in applications %}
+                    <div>
+                        <div>Post: {{application.job_post}}</div>
+                        <div>Applicant: {{application.instructor}}</div>
+                        <a href="{% url 'application' application.id %}">View Application</a>
+                        <hr>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div>
+                Browse Posts
+                <hr>
+                <div>
+                    <a href="{% url 'home' %}">
+                        All</a> 
+                </div>
+                {% for subject in subjects %}
+                    <div>
+                        <a href="{% url 'home' %}?q={{subject}}">
+                            {{subject}} </a>
+                            
+                    </div>
+                {% endfor %}
+            </div>
+                <div>
+                    <p>Number of Posts {{posts.count}}</p>
+                {% for post in posts %}
+                <div>
+                    <div>Postition Title: {{post.position_title}}</div>
+                    <div>application_deadline: {{post.application_deadline}}</div>
+                    <div><a href="{% url 'current_post' post.id %}">details</a></div>
+                    <hr>
+                </div>
+                {% endfor %}
+                </div>
+        {% endif %}
+    </div>
+    
+{% else %}
+<div>
+    <dir>
+        <h1>Welcome To EDUCATORS HUB</h1>
+        <h4>Where We Connect Schools And Teachers</h4>
+        <p>If you are a teacher looking for schools or you are a school looking for teachers
+            then you are at the right place. You Can register now and then update your profile later
+        </p>
+    </dir>
+    <div>
+        Login Now
+    </div>
+    <div>Don't Have Account? Register Now</div>
+</div>
+{% endif %}
+
+{% endblock %}

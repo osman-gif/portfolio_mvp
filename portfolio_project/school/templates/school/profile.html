@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    School Profile
+{% endblock %}
+
+{% block content %}
+<a href="{% url 'update_school_profile' request.user.id %}">Edit</a>
+    Name: {{school.user}}
+    school type: {{school.school_type}}
+{% endblock %}

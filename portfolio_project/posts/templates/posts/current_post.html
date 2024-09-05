@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{post.name}}
+{% endblock %}
+
+{% block content %}
+{% if request.user.user_type == 'school' %}
+    <a href="{% url 'update_post' post.id %}">Edit</a>
+    <a href="{% url 'delete_post' post.id %}">Delete</a>
+    <a href="{% url 'post_applications' post.id%}">Applications</a>
+{% else %}
+
+    {% if applied %}
+        applied
+        <a href="{% url 'update_application' application.id %}">Edit Application</a>
+    {% else %}
+        <a href="{% url 'apply_to_post' %}">apply</a>
+    {% endif %}
+    <hr>
+{% endif %}
+
+<p>Post title: {{post.subject}} </p>
+Number Of Applications
+<strong>{{applications.count}}</strong>
+{% endblock %}

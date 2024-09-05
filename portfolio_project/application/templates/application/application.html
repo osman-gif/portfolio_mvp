@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{application}}
+{% if request.user.user_type == 'instructor' %}
+<a href="{% url 'update_application' application.id %}">Edit</a>
+<a href="{% url 'delete_application' application.id %}">Delete</a>
+{% endif %}
+{% endblock %}
