@@ -1,0 +1,18 @@
+
+.school_profile{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    background-color: rgb(151, 116, 234);
+    height: 1000px;
+}
+
+.school_profile .image{
+    background-image: url('../images/profile.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 200px;
+    
+    border-radius: 200px;
+    margin: 15px 30px;
+    width: 200px;
+}
