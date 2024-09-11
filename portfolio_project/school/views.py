@@ -8,6 +8,7 @@ def school_profile(request, pk):
 
     school = SchoolProfile.objects.get(user=pk)
     
+
     return render(request, 'school/profile.html', {'school':school})
 
 def update_profile(request, pk):
@@ -18,7 +19,8 @@ def update_profile(request, pk):
         form = UpdateSchoolProfile(request.POST, instance=school_profile)
 
         if form.is_valid():
-            form.save()
+            form = form.save(commit=False)
+            form.user = request.user
             return redirect('school_profile',pk)
         
     return render(request, 'school/update_school.html', {'form':form})

@@ -1,0 +1,6 @@
+.current_post{
+    border: 2px solid brown;
+    border-radius: 4px;
+    padding: 5px;
+    background-color: rgb(175, 159, 227);
+}

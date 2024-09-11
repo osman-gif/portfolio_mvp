@@ -1,9 +1,16 @@
 {% extends 'base.html' %}
 
+
 {% block title %}
     Instuctor Profile
 {% endblock %}
 
 {% block content %}
-    {{instructor}}
+    
+    <div class="instructor_profile">
+        <div class="image"></div>
+        {{instructor}}
+    </div>
+    
 {% endblock %}
+

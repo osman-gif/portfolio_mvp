@@ -4,8 +4,8 @@ from application.models import Application
 from django.contrib.auth.decorators import login_required
 
 @login_required(login_url='login')
-def instructor_profile(request, pk):
-    instructor = InstructorProfile.objects.get(user=pk)
+def instructor_profile(request, id):
+    instructor = InstructorProfile.objects.get(user=id)
     
     return render(request, 'instructor/profile.html', {'instructor':instructor})
 

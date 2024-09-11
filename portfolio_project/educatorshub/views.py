@@ -24,7 +24,6 @@ def home(request):
         if request.user.user_type == 'instructor':
             q = request.GET.get('q')
             subjects = ['math', 'english', 'ict']
-        
         else:
             applications = None
             q = request.GET.get('q')

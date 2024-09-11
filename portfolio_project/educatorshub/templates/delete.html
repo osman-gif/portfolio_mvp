@@ -4,7 +4,7 @@
     <form method="post">
         {% csrf_token  %}
         <p>Are you sure you want to delete {{instance}}?</p>
-        <a href="{{request.META.HTTP_REFERER}}?session_key={{ request.session.session_key }}">Go Back</a>
+        <a href="{{request.META.HTTP_REFERER}}">Go Back</a>
         <input type="submit" value="Confirm">
     </form>
 {% endblock %}

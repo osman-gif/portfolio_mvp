@@ -33,7 +33,7 @@ Home
             <div>
                 <p>Number of Applications {{applications.count}}</p>
                 {% for application in applications %}
-                    <div>
+                    <div class="post">
                         <div>Post: {{application.job_post}}</div>
                         <div>Applicant: {{application.instructor}}</div>
                         <a href="{% url 'application' application.id %}">View Application</a>
@@ -60,7 +60,7 @@ Home
                 <div>
                     <p>Number of Posts {{posts.count}}</p>
                 {% for post in posts %}
-                <div>
+                <div class="posts">
                     <div>Postition Title: {{post.position_title}}</div>
                     <div>application_deadline: {{post.application_deadline}}</div>
                     <div><a href="{% url 'current_post' post.id %}">details</a></div>

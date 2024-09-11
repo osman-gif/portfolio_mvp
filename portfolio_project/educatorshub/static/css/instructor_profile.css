@@ -1,6 +1,6 @@
 
 
-.school_profile{
+.instructor_profile{
     border: 2px solid rgb(127, 21, 159);
     display: grid;
     grid-template-columns: 1fr 3fr;
@@ -8,7 +8,7 @@
     height: 1000px;
 }
 
-.school_profile .image{
+.instructor_profile .image{
     border: 2px solid rgb(222, 198, 246);
     background-image: url('../images/profile.jpg');
     background-repeat: no-repeat;

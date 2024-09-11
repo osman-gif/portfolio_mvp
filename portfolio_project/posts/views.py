@@ -34,12 +34,22 @@ def delete_post(request, id):
         return redirect('home')
     return render(request, 'posts/delete.html', {'instance': post})
 
+def get_applications(post):
+    applications = Application.objects.filter(job_post=post)
+    return applications
+
 @login_required(login_url='login')
 def posts(request):
+    post_applications = {}
     posts = JobPost.objects.all()
-    applications = Application.objects.all()
 
-    return render(request, 'posts/posts.html', {'posts':posts})
+    for post in posts:
+        #get all post applications
+        applications = get_applications(post)
+        post_applications[post] = applications
+
+
+    return render(request, 'posts/posts.html', {'posts':posts, 'post_applications': post_applications})
 
 @login_required(login_url='login')
 def post(request, id):
