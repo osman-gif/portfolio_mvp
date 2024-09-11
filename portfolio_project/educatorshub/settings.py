@@ -129,10 +129,18 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# For global static files, specify the directories where static files are located
+import os
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    BASE_DIR / "educatorshub/static",
+        os.path.join(BASE_DIR, 'educatorshub/static')
 ]
+
+
+# For global static files, specify the directories where static files are located
+# STATICFILES_DIRS = [
+#    BASE_DIR / "educatorshub/static",
+#]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
