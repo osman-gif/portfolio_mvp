@@ -1,9 +1,24 @@
+
 {% extends 'base.html' %}
 
 {% block content %}
     {% for post in posts  %}
-    <div>
-        <div>Post Title: {{post}} <a href="{% url 'current_post' post.id %}">{{post}}</a></div>
+    <div class="posts">
+
+        <div>Post Title: {{post}} <a href="{% url 'current_post' post.id %}">{{post}}</a>
+            <div>Deadline : {{post.application_deadline}}</div>
+            <div>School: {{post.school}}</div>
+            <div>Employment Type: {{post.employment_type}}</div>
+        </div>
+        
+        <div>
+            {% for k, v in post_applications.items %}
+            {% if post == k %}
+                <div class="applications_count">{{v.count}}</div>
+            {% endif %}
+        {% endfor %}
+        </div>
+
     </div>
     {% endfor %}
 {% endblock %}
