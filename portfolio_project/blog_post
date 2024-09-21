@@ -1,0 +1,55 @@
+As a software engineer, I've always been driven by the desire to solve real-world problems through technology. My latest project, EduHub, is an example of this passion in action. EduHub is a platform designed to streamline the process of connecting schools with teachers—making life easier for both.
+
+The Problem: Finding the Right Job Shouldn’t Be So Hard
+
+As someone who has previously looked for teaching opportunities, I know firsthand how frustrating the search can be. You have to knock on school doors, call institutions, or post inquiries on social media, hoping someone is looking for a teacher. This can feel like a job in itself!
+
+That’s when I thought: What if there was a platform where teachers could search for open teaching positions, and schools could easily find qualified candidates? And so, EduHub was born.
+
+The Solution: EduHub in Action
+
+EduHub solves two major problems:
+
+    For School Managers: It provides a platform to post job openings for teaching positions and easily find qualified candidates.
+
+    For Teachers: It offers a centralized platform to search and apply for teaching jobs—no more cold-calling schools or scrolling endlessly through social media.
+
+The Tech Stack
+
+Since I was handling both the back-end and front-end, I had to choose technologies that I was comfortable with but also scalable and secure. Here’s what I settled on:
+
+    Back-end: I used Django for its robust security features and active community. Having experience with Django, I felt confident it would serve EduHub’s needs well.
+
+    Database: I opted for MySQL for managing user data and job postings.
+
+    Front-end: The front-end is built using Django’s templating engine, with styling handled by crispy_bootstrap5 and crispy_forms to ensure that the platform looks modern and is mobile-friendly.
+
+Overcoming Challenges: The User System
+
+One of the biggest technical hurdles I faced was handling two distinct types of users—school managers and teachers. Each of these user groups needed their own unique experience on the platform, from sign-up to dashboard views.
+
+At first, I thought about creating two separate user models, but Django’s authentication system doesn’t easily support multiple models. After some research, I discovered a better approach: using a single custom user model with two profiles—one for school managers and one for teachers. This solution streamlined the user experience while still meeting the needs of both types of users.
+
+What I Learned: The Power of Django
+
+This project has given me a deeper appreciation for Django. Initially, I wasn’t convinced by all the hype around the framework, but now I understand why people call it a "batteries-included" framework. It’s powerful, flexible, and made tackling this project far easier than I imagined.
+
+Beyond Django, this project taught me a lot about software engineering in general—particularly the importance of logical thinking and patience. I now feel more confident in my ability to bring ideas to life through code.
+
+Looking Ahead: What’s Next for EduHub?
+
+While I’ve been working on this project solo, I’m excited about the potential to expand and involve more people in the future. EduHub is designed to be scalable, and I see a lot of opportunities to grow its features and reach. Whether that means adding more tools for schools and teachers or improving the platform's user experience, there’s a lot to look forward to.
+
+Useful Links:
+
+    GitHub Repository: Link to the EduHub GitHub repo
+
+    Deployed Project Page: Check out EduHub in action here
+
+    Landing Page: EduHub’s landing page
+
+    Connect with me on LinkedIn: My LinkedIn profile
+
+Final Thoughts:
+
+EduHub started as a simple idea—"What if there was a better way to connect schools and teachers?"—and has since evolved into a fully functional platform. I’m excited to continue improving it and seeing how it can make the process of finding teaching jobs easier for both schools and educators.

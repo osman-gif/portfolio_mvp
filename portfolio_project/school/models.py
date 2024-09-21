@@ -14,6 +14,7 @@ class SchoolProfile(models.Model):
     contact_phone = models.CharField(max_length=15, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    image = models.ImageField(upload_to='images/', null=True, blank=True, default="images/Application_list.png")
 
     def __str__(self):
         return f"{self.user.username} - School"

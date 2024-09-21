@@ -42,8 +42,13 @@ INSTALLED_APPS = [
     'school',
     'instructor',
     'application',
+     "crispy_forms",
+    "crispy_bootstrap5",
 ]
 
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
     
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -129,21 +134,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-import os
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, 'educatorshub/static')
-]
-
-
 # For global static files, specify the directories where static files are located
-# STATICFILES_DIRS = [
-#    BASE_DIR / "educatorshub/static",
-#]
+STATICFILES_DIRS = [
+    BASE_DIR / "educatorshub/static",
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'accounts.CustomUser'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'

@@ -1,0 +1,19 @@
+.my_application {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    width: 98%;
+    height: 120px;
+    padding: 5px 10px;
+    background-color: lightbrown; /* Fixed color typo */
+    border: 2px solid rgb(89, 6, 6);
+}
+
+.my_application .image {
+    background-image: url('../images/profile.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%; /* Used percentage for a perfect circle */
+}
+

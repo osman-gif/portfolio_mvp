@@ -5,18 +5,90 @@
 {% endblock %}
 
 {% block content %}
-
+<style>
+    /* Insert the above CSS here */
+</style>
 <div class="school_profile">
-    <div class="image" style="background-color: rgb(157, 189, 178); "></div>
 
-    <div><H1 style="color:rgb(28, 16, 104); padding: 30px;">{{school.school_name}}
-        <div><sub style="color:rgb(28, 16, 104); padding: 20px;">{{school.school_type}}</sub></div>
-    </H1>
-        <a href="{% url 'update_school_profile' request.user.id %}">Edit</a>
-        <div>{{school.description}}</div>
-    <div>Vist our website: {{school.website}}</div>
+    <div class="image_container">
+        {% if school.image %}
+        <img src="{{school.image.url}}" class="round_image" alt="profile">
+        {% endif %}
+        <div class="image"></div>
+        <h1>{{ school.school_name }}
+            <div>
+                <sub>{{ school.school_type }}</sub>
+            </div>
+        </h1>
+        <h5>School Manager {{ school.user }}</h5>
+        <h5>Established Year {{school.established_year}}</h5>
+        <div><a href="{% url 'update_school_profile' request.user.id %}">Edit</a></div>
+        <h3></h3>
     </div>
     
-    
+   <div class="dynamic-content">
+        <div class="photos hidden">
+            {% if school.image %}
+            <img src="{{school.image.url}}" class="image" alt="">
+            {% endif %}
+        </div>
+
+        <div class="posts hidden">
+            {% for post in posts %}
+            <div style="background-color: darkgray;">
+                <div>{{post.position_title}}</div>
+                <div>{{post.description}}</div>
+                <div>{{post.application_deadline}}</div>
+            </div>
+            
+            
+            {% endfor %}
+        </div>
+        <div class="details hidden">Details</div>
+        
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <button class="nav-link" onclick="displayDiv('.photos')">Photos</button>
+        <button class="nav-link" onclick="displayDiv('.posts')">Posts</button>
+        <button class="nav-link" onclick="displayDiv('.details')">School Details</button>
+    </nav>
+
+    <!-- the content of this div will be displayed dynamically -->
+    <div id="dynamicDiv" class="display-div">
+        
+    </div>
+    <script>
+        // function to dynamically change the content of the display-div div
+        function displayDiv(divClass){
+            // get the content of the div to be display
+            let contentDiv = document.querySelector(divClass)
+
+            // get the div in which to display the contentDiv
+            let display_div = document.getElementById('dynamicDiv')
+            
+            // check if the contentDiv is selected
+            if (contentDiv){
+                display_div.innerHTML = contentDiv.innerHTML
+            }
+        }
+
+        // set default content for displayDiv
+        window.onload = function() {
+            displayDiv('.photos');  // Default to the Photos content
+        }
+        
+    </script>
+   </div>
+
+    <div class="info_contact">
+        <h3>Contact Information</h3>
+        <h5>Visit our website</h5>
+        <div><a href="{{ school.website }}" target="_blank">{{ school.website }}</a></div>
+
+        <h5>Email</h5>
+        <div><h5>{{ school.contact_email}}</h5></div>
+        <h5>Phone</h5>
+        <div><h5>{{ school.contact_phone }}</h5></div>
+        <div>{{ school.email }}</div>
+    </div>
 </div>
 {% endblock %}

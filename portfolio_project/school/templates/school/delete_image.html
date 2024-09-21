@@ -1,0 +1,4 @@
+<form method="POST" action="{% url 'delete_school_image' pk=school.pk %}"></form>
+    {% csrf_token %}
+    <button type="submit">Delete Image</button>
+</form>

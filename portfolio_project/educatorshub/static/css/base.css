@@ -1,4 +1,160 @@
-
+/* 
 body {
-    background-color: rgb(185, 57, 136);
+    font-family: 'Poppins', sans-serif;
+    background-color: #F7F9FB;
+    color: #555555;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #2B6777;
+    font-weight: 700;
+}
+
+
+.btn-primary:hover {
+    background-color: #52AB98;
+}
+
+.btn-primary {
+    background-color: #2B6777;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary {
+    background-color: #52AB98;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #2B6777;
+}
+
+/* Links */
+/* a {
+    color: #2B6777;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #52AB98;
+}
+
+/* Input Fields */
+input, textarea {
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 1rem;
+    color: #555;
+    background-color: #FFFFFF;
+}
+
+input:focus, textarea:focus {
+    border-color: #2B6777;
+    outline: none;
+}
+ */ */
+
+/* --------------------------------------------------------------- */
+
+/* General Theme Settings */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F7F9FB;
+    color: #555555;
+    margin: 0;
+    padding: 0;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    color: #2B6777;
+    font-weight: 700;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #2B6777;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #52AB98;
+}
+
+.btn-secondary {
+    background-color: #52AB98;
+    border: none;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #2B6777;
+}
+
+/* Links */
+a {
+    color: #2B6777;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #52AB98;
+}
+
+/* Input Fields */
+input, textarea {
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 1rem;
+    color: #555;
+    background-color: #FFFFFF;
+}
+
+input:focus, textarea:focus {
+    border-color: #2B6777;
+    outline: none;
+}
+
+/* Cards */
+.card {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #2B6777;
+    color: #EEEEEE;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer a {
+    color: #FFC93C;
+}
+
+footer a:hover {
+    color: #52AB98;
 }

@@ -1,6 +1,71 @@
 .current_post{
-    border: 2px solid brown;
+    border: 2px solid rgb(37, 55, 53);
     border-radius: 4px;
     padding: 5px;
-    background-color: rgb(175, 159, 227);
+    background-color: rgb(175, 165, 207);
+
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* ----------------------------------------------------- */
+
+/* Container for Current Post Details */
+.current_post {
+    background-color: #F9F9F9;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Post Title */
+.current_post p {
+    color: #333;
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+/* Edit/Delete/Application Buttons */
+.current_post a {
+    display: inline-block;
+    color: #2B6777;
+    background-color: #E0F7FA;
+    border: 1px solid #B2EBF2;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.current_post a:hover {
+    background-color: #B2EBF2;
+    color: #01579B;
+}
+
+/* Applied/Not Applied Status */
+.current_post div {
+    margin: 15px 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .current_post {
+        padding: 15px;
+    }
+
+    .current_post p {
+        font-size: 1rem;
+    }
+
+    .current_post a {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
 }

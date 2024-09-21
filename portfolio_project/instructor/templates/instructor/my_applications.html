@@ -2,6 +2,13 @@
 
 {% block content %}
     {% for application in my_applications %}
-    <p>{{application}}: <a href="{% url 'application' application.id %}">View Application</a></p>
+    <div class="card" style="width: 100%; margin-bottom: 5px;">
+        <div class="card-body">
+          <h5 class="card-title">Job Title: {{application.job_post.position_title}}</h5>
+          <p class="card-text">School: {{application.job_post.school.school_name}}</p>
+          <a href="{% url 'application' application.id %}" class="btn btn-primary">View Application</a>
+        </div>
+      </div>
+
     {% endfor %}
 {% endblock %}

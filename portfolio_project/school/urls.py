@@ -4,5 +4,6 @@ from . import views
 
 urlpatterns = [
     path('school/<str:pk>', views.school_profile, name='school_profile'),
-    path('update_school_profile/<str:pk>',views.update_profile, name='update_school_profile' )
+    path('update_school_profile/<str:pk>',views.update_profile, name='update_school_profile' ),
+    path('school/<int:pk>/delete-image/', views.delete_image, name='delete_school_image'),
 ]

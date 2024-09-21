@@ -1,5 +1,95 @@
 .post{
     border-radius: 4px;
-    background-color: rgb(177, 8, 234);
+    background-color: rgb(232, 227, 234);
     padding: 5px;
+}
+
+.home_image{
+    background-image: url('../images/exam.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 500px;
+    opacity: 0.7; 
+}
+
+/* ------------------------------------------------------------------------------ */
+
+/* General Container */
+.home-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.home-container div {
+    background-color: #aadcf9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar Links */
+.home-container a {
+    display: block;
+    color: #2B6777;
+    font-weight: 600;
+    margin: 8px 0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.home-container a:hover {
+    color: #153c45;
+}
+
+/* Cards for Posts and Applications */
+.card {
+    background-color: #FFF;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-title {
+    color: #2B6777;
+    font-weight: bold;
+}
+
+.card-text {
+    color: #52AB98;
+}
+
+.btn-primary {
+    background-color: #52AB98;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #FFC93C;
+    color: #FFF;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .home-container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .home-container a {
+        font-size: 0.9rem;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
 }

@@ -1,6 +1,65 @@
 {% load static %}
-<nav class="header">
-   
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+     {% if request.user.is_authenticated %}
+      <a class="navbar-brand" href="{% url 'home' %}">EduHub</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">Logout</a>
+          </li>
+          {% if request.user.user_type == 'school' %}
+            <a class="nav-link" href="{% url 'posts' %}">My Job Posts</a>
+            <a class="nav-link" href="{% url 'create_post' %}">Post Jop</a>
+
+          {% endif %}
+          {% if request.user.user_type == 'instructor' %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'my_applications' request.user.id %}">My Applications</a>
+          </li>
+          {% endif %}
+          <li class="dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+              Account
+            </a>
+            <ul class="dropdown-content">
+              <span><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></span>
+              <span><a class="dropdown-item" href="{% url 'delete_account' request.user.id %}">Delete Account</a></span>
+              {% if request.user.user_type == 'school' %}
+                <span><a class="dropdown-item" href="{% url 'school_profile' request.user.id %}">View Profile</a></span>
+              {% endif %}
+                
+              {% if request.user.user_type == 'instructor' %}
+              <li><a class="dropdown-item" href="{% url 'instructor_profile' request.user.id %}">View Profile</a></li>
+              {% endif %}
+            </ul>
+          </li>
+          <div class="profile">
+
+              <div class="profile_pic"><img src="{{school.image.url}}"></div>
+
+        </div>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+
+        <form class="d-flex" role="search">
+          <div style="display: flex;">
+            <input class="form-control me-2" type="search" name="q" placeholder="Search by subject ..."name="q" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </div>
+        </form>
+      </div>
+      {% endif %}
+    </div>
+  </nav>
+
+<!-- <nav class="header">
+    <a href="{% url 'home' %}">EduHub</a>
     {% if request.user.is_authenticated %}
         <a href="{% url 'logout' %}">Logout</a>
         <a href="{% url 'delete_account' request.user.id %}"> Delete Account</a>
@@ -33,4 +92,4 @@
     {% endif %}
     
 </nav>
-<hr>
+<hr> -->

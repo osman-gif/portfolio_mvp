@@ -4,3 +4,76 @@
     border-radius: 4px;
     background-color: rgb(218, 172, 237);
 }
+
+/* -------------------------------------------------------------- */
+
+/* Create Post Form Container */
+.create_post {
+    background-color: #F9F9F9;
+    padding: 30px;
+    margin: 0 auto;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Fields Styling */
+.create_post input[type="text"],
+.create_post input[type="email"],
+.create_post input[type="date"],
+.create_post input[type="number"],
+.create_post select,
+.create_post textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 20px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    background-color: #F1F6F9;
+    color: #2B6777;
+    transition: border-color 0.3s ease;
+}
+
+.create_post input[type="text"]:focus,
+.create_post input[type="email"]:focus,
+.create_post input[type="date"]:focus,
+.create_post input[type="number"]:focus,
+.create_post select:focus,
+.create_post textarea:focus {
+    border-color: #52AB98;
+    outline: none;
+}
+
+/* Submit Button Styling */
+.create_post input[type="submit"] {
+    background-color: #52AB98;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.create_post input[type="submit"]:hover {
+    background-color: #FFC93C;
+    transform: translateY(-2px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .create_post {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .create_post input[type="submit"] {
+        width: 100%;
+        padding: 15px;
+    }
+}

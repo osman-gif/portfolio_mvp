@@ -3,12 +3,20 @@
 {% block content %}
 <div class="post_application">
     <div class="profile_pic"></div>
-Applicant {{application.instructor}}
-<div>On {{application.application_date}}</div>
+
 </div>
 
-{% if request.user.user_type == 'instructor' %}
-<a href="{% url 'update_application' application.id %}">Edit</a>
-<a href="{% url 'delete_application' application.id %}">Delete</a>
-{% endif %}
+<div class="card" style="width: 100%;">
+    <div class="card-body">
+      <h5 class="card-title">On {{application.application_date}}</h5>
+      <h5 class="card-title">{{application.instructor}}</h5>
+      {% if request.user.user_type == 'instructor' %}
+            <a href="{% url 'update_application' application.id %}" class="btn btn-primary">Edit</a>
+            <a href="{% url 'delete_application' application.id %}" class="btn btn-primary">Delete</a>
+        {% endif %}
+    </div>
+  </div>
+  
+
+
 {% endblock %}
